@@ -1,10 +1,12 @@
 class KittensController < ApplicationController
+  before_action :set_kitten, only: [:show, :edit, :update, :destroy]
+
   def index
     @kittens = Kitten.all
   end
 
   def show
-    @kitten = Kitten.find(params[:id])
+
   end
 
   def new
@@ -24,12 +26,10 @@ class KittensController < ApplicationController
   end
 
   def edit
-    @kitten = Kitten.find(params[:id])
+
   end
 
   def update
-    @kitten = Kitten.find(params[:id])
-
     if @kitten.update(kitten_params)
       flash.now[:success] = "Meow! You edited a kitten!"
       redirect_to @kitten
@@ -39,16 +39,18 @@ class KittensController < ApplicationController
     end
   end
 
-  def delete
-    @kitten = Kitten.find(params[:id])
-    if @kitten.destroy
-      flash.now[:success] = "You released a kitten into the wild!"
-      redirect_to root_path, status: :see_other
-    end
+  def destroy
+    @kitten.destroy
+    flash.now[:success] = "You released a kitten into the wild!"
+    redirect_to root_path, status: :see_other
   end
 
   private
   def kitten_params
     params.require(:kitten).permit(:name, :age, :cuteness, :softness)
+  end
+
+  def set_kitten
+    @kitten = Kitten.find(params[:id])
   end
 end
