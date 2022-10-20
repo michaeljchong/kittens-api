@@ -4,6 +4,7 @@ class KittensController < ApplicationController
   end
 
   def show
+    @kitten = Kitten.find(params[:id])
   end
 
   def new
@@ -19,5 +20,10 @@ class KittensController < ApplicationController
   end
 
   def delete
+  end
+
+  private
+  def kitten_params
+    params.require(:kitten).permit(:name, :age, :cuteness, :softness)
   end
 end

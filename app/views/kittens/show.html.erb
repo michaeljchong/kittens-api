@@ -1,2 +1,3 @@
-<h1>Kittens#show</h1>
-<p>Find me in app/views/kittens/show.html.erb</p>
+<h1><%= @kitten.name %></h1>
+
+<%= render 'details', kitten: @kitten %>
