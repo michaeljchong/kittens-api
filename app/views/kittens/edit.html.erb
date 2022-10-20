@@ -1,4 +1,7 @@
 <h1>Edit Kitten</h1>
 
-<%= render 'form', kitten: @kitten%>
+<%= form_with model: @kitten do |f| %>
+  <%= render 'form', f: f%>
+  <%= submit_tag "Finish Editing" %>
+<% end %>
 <%= button_to "Release Kitten", kitten_path(@kitten), method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
