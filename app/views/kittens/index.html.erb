@@ -2,7 +2,5 @@
 
 <% @kittens.each do |kitten| %>
   Name: <%= kitten.name %><br>
-  Age: <%= kitten.age %><br>
-  Cuteness: <%= kitten.cuteness %><br>
-  Softness: <%= kitten.softness %><br>
+  <%= render 'details', kitten: kitten %>
 <% end %>
