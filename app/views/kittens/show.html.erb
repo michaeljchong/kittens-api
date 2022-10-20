@@ -1,3 +1,4 @@
 <h1><%= @kitten.name %></h1>
 
 <%= render 'details', kitten: @kitten %>
+<%= button_to "Go Back", kittens_path, method: :get %>
