@@ -1,5 +1,7 @@
 <h1>All Kittens</h1>
 
+<%= button_to "Add A Kitten", new_kitten_path, method: :get %>
+
 <% @kittens.each do |kitten| %>
   Name: <%= kitten.name %><br>
   <%= render 'details', kitten: kitten %>
