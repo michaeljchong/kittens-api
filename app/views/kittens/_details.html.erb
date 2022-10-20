@@ -1,3 +1,5 @@
 Age: <%= kitten.age %><br>
 Cuteness: <%= kitten.cuteness %><br>
 Softness: <%= kitten.softness %><br>
+<%= button_to "Edit", edit_kitten_path(kitten), method: :get %>
+<%= button_to "Release Kitten", kitten_path(kitten), method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
