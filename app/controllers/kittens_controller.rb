@@ -17,7 +17,7 @@ class KittensController < ApplicationController
     @kitten = Kitten.new(kitten_params)
 
     if @kitten.save
-      flash.now[:success] = "Meow! There's one more kitten!"
+      flash[:success] = "Meow! There's one more kitten!"
       redirect_to @kitten
     else
       flash.now[:error] = "Bark! Kitten details submitted incorrectly"
@@ -31,7 +31,7 @@ class KittensController < ApplicationController
 
   def update
     if @kitten.update(kitten_params)
-      flash.now[:success] = "Meow! You edited a kitten!"
+      flash[:success] = "Meow! You edited a kitten!"
       redirect_to @kitten
     else
       flash.now[:error] = "Bark! Kitten details submitted incorrectly"
@@ -41,7 +41,7 @@ class KittensController < ApplicationController
 
   def destroy
     @kitten.destroy
-    flash.now[:success] = "You released a kitten into the wild!"
+    flash[:success] = "You released a kitten into the wild!"
     redirect_to root_path, status: :see_other
   end
 
