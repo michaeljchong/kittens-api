@@ -3,8 +3,8 @@ class CreateKittens < ActiveRecord::Migration[7.0]
     create_table :kittens do |t|
       t.string :name
       t.integer :age
-      t.integer :cuteness
-      t.integer :softness
+      t.string :cuteness
+      t.string :softness
 
       t.timestamps
     end

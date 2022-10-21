@@ -1,8 +1,8 @@
 <%= f.label :name, "Name" %>
 <%= f.text_field :name %><br>
 <%= f.label :age, "Age" %>
-<%= f.text_field :age %><br>
+<%= f.select :age, (0..20).to_a %><br>
 <%= f.label :cuteness, "Cuteness" %>
-<%= f.text_field :cuteness %><br>
+<%= f.select :cuteness, Kitten::CUTENESS %><br>
 <%= f.label :softness, "Softness" %>
-<%= f.text_field :softness %><br>
+<%= f.select :softness, Kitten::SOFTNESS %><br>
